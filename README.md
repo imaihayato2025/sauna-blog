@@ -58,33 +58,40 @@
 ```bash
 src/
 ├─ app/
-│  ├─ page.tsx                 # トップページ（最新記事・都道府県検索など）
+│  ├─ page.tsx                     
 │  ├─ articles/
-│  │  ├─ page.tsx              # 記事一覧ページ
-│  │  └─ [id]/page.tsx         # 記事詳細ページ
+│  │  ├─ page.tsx                  
+│  │  └─ [id]/page.tsx            
 │
+src/
 ├─ components/
-│  ├─ layout/                  # レイアウト関連コンポーネント
+│  ├─ layout/
 │  │  ├─ Header.tsx
+│  │  ├─ Logo.tsx
+│  │  ├─ Nav.tsx
 │  │  ├─ Footer.tsx
-│  │  └─ MainLayout.tsx
-│  ├─ ui/                      # 汎用UIパーツ
+│  │  ├─ MainLayout.tsx
+│  │  └─ Container.tsx   
+│  │
+│  ├─ ui/                          
 │  │  ├─ Button.tsx
 │  │  ├─ Tag.tsx
 │  │  ├─ Card.tsx
 │  │  └─ SectionTitle.tsx
-│  ├─ home/                    # トップページ専用コンポーネント
-│  │  ├─ Hero.tsx
-│  │  ├─ LatestArticles.tsx
-│  │  ├─ PrefectureFilter.tsx
-│  │  └─ PickupSauna.tsx
-│  └─ articles/                # 記事関連コンポーネント
-│     ├─ ArticleList.tsx
-│     ├─ ArticleDetail.tsx
-│     └─ RelatedArticles.tsx
+│  │
+│  ├─ home/                        
+│  │  ├─ Hero.tsx                  
+│  │  ├─ LatestArticles.tsx        
+│  │  ├─ PrefectureFilter.tsx      
+│  │  └─ PickupSauna.tsx           
+│  │
+│  └─ articles/                   
+│     ├─ ArticleList.tsx           
+│     ├─ ArticleDetail.tsx         
+│     └─ RelatedArticles.tsx       
 │
 └─ lib/
-   └─ microcms.ts              # API呼び出し・データ取得処理
+   └─ microcms.ts                   # API呼び出し・データ取得処理
 ```
 
 ## 🏷 ブランチ命名規則（最低限）
