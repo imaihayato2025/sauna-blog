@@ -1,7 +1,8 @@
+import Logo from "@/components/layout/Logo";
 export default function Header() {
   return (
     <header className="w-hull">
-      <div></div>
+      <Logo />
       <div></div>
     </header>
   );
