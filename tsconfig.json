@@ -16,10 +16,10 @@
     "plugins": [{ "name": "next" }],
     "baseUrl": "src",
     "paths": {
-      "@/styles/*": ["app/styles/*"], // globals.css など
+      "@/styles/*": ["app/styles/*"],
       "@/components/*": ["components/*"],
       "@/components/layout/*": ["components/layout/*"],
-      "@/app/*": ["app/*"] // これで @/app/ が通る
+      "@/app/*": ["app/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
