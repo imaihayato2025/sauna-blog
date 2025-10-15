@@ -2,12 +2,12 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <div className="relative h-[400px] w-full">
+    <div className="relative my-4 h-[300px] w-full md:my-12 md:h-[500px]">
       <Image
-        src="/images/hero.jpg" // public/images/hero.jpg に画像を置く
+        src="/main.png"
         alt="サウナのメインビジュアル"
         fill
-        className="object-cover"
+        className="rounded-lg object-cover"
         priority
       />
     </div>
