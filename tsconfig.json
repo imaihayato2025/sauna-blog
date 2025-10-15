@@ -19,6 +19,9 @@
       "@/styles/*": ["app/styles/*"],
       "@/components/*": ["components/*"],
       "@/components/layout/*": ["components/layout/*"],
+      "@/components/home/*": ["components/home/*"],
+      "@/components/ui/*": ["components/ui/*"],
+      "@/components/articles/*": ["components/articles/*"],
       "@/app/*": ["app/*"]
     }
   },
