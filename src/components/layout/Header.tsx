@@ -5,6 +5,7 @@ export default function Header() {
     <header className="max-w-7xl w-full h-24 flex flex-col justify-center items-center mx-auto">
       <div className="flex justify-center w-[90%] ">
         <Logo />
+        <Nav />
       </div>
     </header>
   );
