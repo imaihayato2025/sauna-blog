@@ -19,9 +19,13 @@ export default function Nav() {
     <nav className="flex">
       <button
         onClick={navToggle}
-        className={`absolute top-5 right-5 z-10 h-7 w-7 bg-red-500 ${isOpen ? "bg-blue-600" : "bg-gray-600"}`}
+        className={`relative z-10 flex h-10 w-10 flex-col items-center justify-center ${isOpen ? "bg-blue-600" : "bg-black"}`}
       >
-        {isOpen ? <HiX size={28} /> : <HiMenu size={28} />}
+        {isOpen ? (
+          <HiX size={28} className="text-white" />
+        ) : (
+          <HiMenu size={28} className="text-white" />
+        )}
       </button>
       <ul
         className={`absolute top-0 right-0 flex h-screen w-64 flex-col items-center justify-center bg-black ${isOpen ? "translate-x-0" : "translate-x-full"}`}
