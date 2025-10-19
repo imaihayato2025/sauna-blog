@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 import { BiMenuAltLeft } from "react-icons/bi";
@@ -14,7 +15,10 @@ export default function Nav() {
     setIsOpen(false);
   };
 
-  const navItems = [{ label: "トップ" }, { label: "ブログ" }];
+  const navItems = [
+    { label: "トップ", href: "/" },
+    { label: "ブログ", href: "/blog" },
+  ];
 
   return (
     <nav className="flex">
@@ -22,7 +26,7 @@ export default function Nav() {
         onClick={navToggle}
         className={`absolute top-3 right-3 z-20 flex h-12 w-12 flex-col items-center justify-center ${isOpen ? "" : ""}`}
       >
-        <div className="transition-all duration-300 ease-in-out">
+        <div className={`transition-all duration-300 ease-in-out`}>
           {isOpen ? (
             <HiX size={32} className="text-white" />
           ) : (
@@ -31,11 +35,11 @@ export default function Nav() {
         </div>
       </button>
       <ul
-        className={`absolute top-0 right-0 z-10 flex h-screen w-[60%] transform flex-col items-center justify-center gap-6 bg-[#222121] transition-transform duration-300 ease-in-out md:w-[30%] ${isOpen ? "translate-x-0" : "translate-x-full"}`}
+        className={`fixed top-0 right-0 z-10 flex h-screen w-[60%] transform flex-col items-center justify-center gap-6 bg-[#222121] transition-transform duration-300 ease-in-out md:w-[30%] ${isOpen ? "translate-x-0" : "translate-x-full"}`}
       >
         {navItems.map((item) => (
           <li key={item.label} className="text-base font-bold text-white">
-            {item.label}
+            <Link href={item.href}>{item.label}</Link>
           </li>
         ))}
       </ul>
