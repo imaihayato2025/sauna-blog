@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 import { BiMenuAltLeft } from "react-icons/bi";
@@ -14,7 +15,10 @@ export default function Nav() {
     setIsOpen(false);
   };
 
-  const navItems = [{ label: "トップ" }, { label: "ブログ" }];
+  const navItems = [
+    { label: "トップ", href: "/" },
+    { label: "ブログ", href: "/blog" },
+  ];
 
   return (
     <nav className="flex">
@@ -35,7 +39,7 @@ export default function Nav() {
       >
         {navItems.map((item) => (
           <li key={item.label} className="text-base font-bold text-white">
-            {item.label}
+            <Link href={item.href}>{item.label}</Link>
           </li>
         ))}
       </ul>
