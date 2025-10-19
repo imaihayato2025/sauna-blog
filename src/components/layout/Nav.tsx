@@ -20,7 +20,7 @@ export default function Nav() {
     <nav className="flex">
       <button
         onClick={navToggle}
-        className={`absolute top-5 right-5 z-20 flex h-12 w-12 flex-col items-center justify-center ${isOpen ? "" : ""}`}
+        className={`absolute top-3 right-3 z-20 flex h-12 w-12 flex-col items-center justify-center ${isOpen ? "" : ""}`}
       >
         <div className="transition-all duration-300 ease-in-out">
           {isOpen ? (
