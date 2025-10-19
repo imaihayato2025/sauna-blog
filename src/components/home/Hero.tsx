@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <div className="relative h-[300px] w-full md:h-[500px]">
+    <div className="relative h-[300px] w-full md:h-[600px]">
       <Image
         src="/main.png"
         alt="サウナのメインビジュアル"
