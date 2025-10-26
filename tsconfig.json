@@ -22,7 +22,8 @@
       "@/components/home/*": ["components/home/*"],
       "@/components/ui/*": ["components/ui/*"],
       "@/components/articles/*": ["components/articles/*"],
-      "@/app/*": ["app/*"]
+      "@/app/*": ["app/*"],
+      "@/libs/*": ["libs/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
