@@ -4,14 +4,15 @@ import ArticleDetail from "./ArticleDetail";
 type PostsProps = {
   id: string;
   title: string;
-  src: string;
+  eyecatch?: {
+    url: string;
+  };
 };
-
 async function getBlogPosts(): Promise<PostsProps[]> {
   const data = await client.get({
     endpoint: "saunablog",
     queries: {
-      fields: "id,title,src",
+      fields: "id,title,eyecatch",
       limit: 6,
     },
   });
@@ -20,10 +21,16 @@ async function getBlogPosts(): Promise<PostsProps[]> {
 
 export default async function ArticleList() {
   const articles = await getBlogPosts();
+
   return (
     <div>
       {articles.map((article) => (
-        <ArticleDetail src={article.src} title={article.title} />
+        <ArticleDetail
+          key={article.id}
+          id={article.id} // ✅ 追加
+          eyecatch={article.eyecatch?.url || "/noimage.png"}
+          title={article.title}
+        />
       ))}
     </div>
   );
