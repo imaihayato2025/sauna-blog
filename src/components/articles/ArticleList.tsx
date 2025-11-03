@@ -8,12 +8,13 @@ type PostsProps = {
   eyecatch?: {
     url: string;
   };
+  date: string;
 };
 async function getBlogPosts(): Promise<PostsProps[]> {
   const data = await client.get({
     endpoint: "saunablog",
     queries: {
-      fields: "id,category,title,eyecatch",
+      fields: "id,category,title,eyecatch,date",
       limit: 6,
     },
   });
@@ -32,6 +33,7 @@ export default async function ArticleList() {
           category={article.category}
           title={article.title}
           eyecatch={article.eyecatch?.url || "/noimage.png"}
+          date={new Date(article.date).toLocaleDateString("ja-JP")}
         />
       ))}
     </div>
