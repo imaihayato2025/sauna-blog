@@ -28,10 +28,10 @@ export default function ArticleDetail({
 
       <div className="w-[65%] p-2 sm:w-full">
         <div className="flex items-center gap-2 text-[#949497]">
-          <span className="bg-black px-1 py-0.5 text-[12px] text-white">
+          <span className="bg-black px-1 text-[10px] text-white">
             {category}
           </span>
-          <span className="text-[12px]">{date}</span>
+          <span className="text-[10px]">{date}</span>
         </div>
         <h3 className="text-[clamp(0.75rem, 0.667rem + 0.42vw, 1rem)] font-bold">
           {title}
