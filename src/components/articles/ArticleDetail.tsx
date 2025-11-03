@@ -14,7 +14,7 @@ export default function ArticleDetail({
   eyecatch,
 }: ArticleDetailProps) {
   return (
-    <div className="flex w-full sm:w-[48%] md:w-[31%]">
+    <div className="flex w-full sm:w-[48%] sm:flex-col md:w-[31%]">
       <div className="relative aspect-[16/9] w-[40%] sm:w-full">
         <Image
           src={eyecatch}
@@ -24,7 +24,7 @@ export default function ArticleDetail({
         />
       </div>
 
-      <div className="w-full bg-amber-500 p-2">
+      <div className="w-[60%] bg-amber-500 p-2 sm:w-full">
         <span className="bg-black px-1 py-0.5 text-[12px] text-white">
           {category}
         </span>
