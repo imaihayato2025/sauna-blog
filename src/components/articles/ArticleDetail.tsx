@@ -12,8 +12,8 @@ export default function ArticleDetail({
   title,
 }: ArticleDetailProps) {
   return (
-    <div className="flex w-full">
-      <div className="relative h-32 w-[30%]">
+    <div className="flex w-full sm:w-[48%] md:w-[31%]">
+      <div className="relative aspect-[16/9] w-[40%] sm:w-full">
         <Image
           src={eyecatch}
           alt={title}
@@ -22,8 +22,10 @@ export default function ArticleDetail({
         />
       </div>
 
-      <div className="w-[70%] p-2">
-        <h3 className="">{title}</h3>
+      <div className="w-full bg-amber-500 p-2">
+        <h3 className="text-[clamp(0.75rem, 0.667rem + 0.42vw, 1rem)] font-bold">
+          {title}
+        </h3>
       </div>
     </div>
   );

@@ -23,7 +23,7 @@ export default async function ArticleList() {
   const articles = await getBlogPosts();
 
   return (
-    <div>
+    <div className="flex w-full flex-col justify-between gap-y-8 sm:flex-row sm:flex-wrap">
       {articles.map((article) => (
         <ArticleDetail
           key={article.id}
