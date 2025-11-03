@@ -3,6 +3,7 @@ import ArticleDetail from "./ArticleDetail";
 
 type PostsProps = {
   id: string;
+  category: string;
   title: string;
   eyecatch?: {
     url: string;
@@ -12,7 +13,7 @@ async function getBlogPosts(): Promise<PostsProps[]> {
   const data = await client.get({
     endpoint: "saunablog",
     queries: {
-      fields: "id,title,eyecatch",
+      fields: "id,category,title,eyecatch",
       limit: 6,
     },
   });
@@ -27,9 +28,10 @@ export default async function ArticleList() {
       {articles.map((article) => (
         <ArticleDetail
           key={article.id}
-          id={article.id} // ✅ 追加
-          eyecatch={article.eyecatch?.url || "/noimage.png"}
+          id={article.id}
+          category={article.category}
           title={article.title}
+          eyecatch={article.eyecatch?.url || "/noimage.png"}
         />
       ))}
     </div>

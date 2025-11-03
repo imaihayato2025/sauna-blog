@@ -2,14 +2,16 @@ import Image from "next/image";
 
 type ArticleDetailProps = {
   id: string;
-  eyecatch: string;
+  category: string;
   title: string;
+  eyecatch: string;
 };
 
 export default function ArticleDetail({
   id,
-  eyecatch,
+  category,
   title,
+  eyecatch,
 }: ArticleDetailProps) {
   return (
     <div className="flex w-full sm:w-[48%] md:w-[31%]">
@@ -23,6 +25,9 @@ export default function ArticleDetail({
       </div>
 
       <div className="w-full bg-amber-500 p-2">
+        <span className="bg-black px-1 py-0.5 text-[12px] text-white">
+          {category}
+        </span>
         <h3 className="text-[clamp(0.75rem, 0.667rem + 0.42vw, 1rem)] font-bold">
           {title}
         </h3>
