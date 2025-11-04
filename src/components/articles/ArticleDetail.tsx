@@ -17,8 +17,11 @@ export default function ArticleDetail({
   date,
 }: ArticleDetailProps) {
   return (
-    <Link href={`/articles/${id}`}>
-      <div className="flex w-full border-b border-[#dadce0] pb-4 sm:w-[48%] sm:flex-col md:w-[31%]">
+    <Link
+      href={`/articles/${id}`}
+      className="block w-full sm:w-[48%] md:w-[31%]"
+    >
+      <div className="flex w-full border-b border-[#dadce0] pb-4 sm:flex-col">
         <div className="relative aspect-[16/9] w-[35%] sm:w-full">
           <Image
             src={eyecatch}
@@ -29,7 +32,7 @@ export default function ArticleDetail({
         </div>
 
         <div className="w-[65%] p-2 sm:w-full">
-          <div className="flex items-center gap-2 text-[#949497]">
+          <div className="flex items-center gap-2 pb-0.5 text-[#949497] sm:pb-1">
             <span className="bg-black px-1 text-[10px] text-white">
               {category}
             </span>
