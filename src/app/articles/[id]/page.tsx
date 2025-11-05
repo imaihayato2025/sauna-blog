@@ -8,6 +8,7 @@ type ArticleProps = {
   eyecatch?: {
     url: string;
   };
+  content: any;
 };
 
 type Params = {
@@ -43,6 +44,11 @@ export default async function BlogPostPage({
         {article.category}
       </span>
       <h3 className="pb-8 text-left text-2xl font-bold">{article.title}</h3>
+
+      <div
+        className="prose prose-lg dark:prose-invert max-w-none"
+        dangerouslySetInnerHTML={{ __html: article.content }}
+      />
     </div>
   );
 }
