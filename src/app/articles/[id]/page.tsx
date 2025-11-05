@@ -8,7 +8,7 @@ type ArticleProps = {
   eyecatch?: {
     url: string;
   };
-  content: any;
+  content: string;
 };
 
 type Params = {
