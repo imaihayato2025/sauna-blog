@@ -42,3 +42,22 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# .gitignoreファイルの最後に追加
+echo "" >> .gitignore
+echo "# IDE and editor files" >> .gitignore
+echo ".vscode/" >> .gitignore
+echo ".idea/" >> .gitignore
+echo "" >> .gitignore
+echo "# Build artifacts" >> .gitignore
+echo ".flowbite-react/" >> .gitignore
+```
+
+または、エディタで`.gitignore`を開いて以下を追加：
+```
+# IDE and editor files
+.vscode/
+.idea/
+
+# Build artifacts
+.flowbite-react/
