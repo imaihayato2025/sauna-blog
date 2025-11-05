@@ -39,7 +39,9 @@ export default function Nav() {
       >
         {navItems.map((item) => (
           <li key={item.label} className="text-base font-bold text-white">
-            <Link href={item.href}>{item.label}</Link>
+            <Link href={item.href} onClick={navClose}>
+              {item.label}
+            </Link>
           </li>
         ))}
       </ul>
