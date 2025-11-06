@@ -1,3 +1,4 @@
+import ArticleNavigation from "@/components/articles/ArticleNavigation";
 import { client } from "@/libs/microcms";
 import Image from "next/image";
 
@@ -31,7 +32,7 @@ export default async function BlogPostPage({
   const { id } = await params;
   const article = await getBlogPost(id);
   return (
-    <div className="mx-auto w-[90%] max-w-5xl md:w-1/2">
+    <div className="mx-auto mt-10 mb-20 w-[90%] max-w-5xl md:w-2/3">
       <div className="relative mb-4 aspect-[16/9] w-full">
         <Image
           src={article.eyecatch?.url || "/noimage.png"}
@@ -49,6 +50,9 @@ export default async function BlogPostPage({
         className="prose prose-lg dark:prose-invert max-w-none"
         dangerouslySetInnerHTML={{ __html: article.content }}
       />
+      <div className="mt-20">
+        <ArticleNavigation />
+      </div>
     </div>
   );
 }
