@@ -31,7 +31,7 @@ export default async function BlogPostPage({
   const { id } = await params;
   const article = await getBlogPost(id);
   return (
-    <div className="mx-auto w-[90%] max-w-5xl md:w-1/2">
+    <div className="mx-auto mt-10 mb-20 w-[90%] max-w-5xl md:w-2/3">
       <div className="relative mb-4 aspect-[16/9] w-full">
         <Image
           src={article.eyecatch?.url || "/noimage.png"}
