@@ -1,3 +1,4 @@
+import ArticleNavigation from "@/components/articles/ArticleNavigation";
 import { client } from "@/libs/microcms";
 import Image from "next/image";
 
@@ -49,6 +50,9 @@ export default async function BlogPostPage({
         className="prose prose-lg dark:prose-invert max-w-none"
         dangerouslySetInnerHTML={{ __html: article.content }}
       />
+      <div className="mt-20">
+        <ArticleNavigation />
+      </div>
     </div>
   );
 }
