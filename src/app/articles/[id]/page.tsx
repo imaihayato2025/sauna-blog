@@ -33,6 +33,11 @@ export default async function BlogPostPage({
   const article = await getBlogPost(id);
   return (
     <div className="mx-auto mt-10 mb-20 w-[90%] max-w-5xl md:w-2/3">
+      <span className="bg-black px-1 py-0.5 text-base text-white">
+        {article.category}
+      </span>
+      <h3 className="pb-4 text-left text-2xl font-bold">{article.title}</h3>
+
       <div className="relative mb-4 aspect-[16/9] w-full">
         <Image
           src={article.eyecatch?.url || "/noimage.png"}
@@ -41,13 +46,8 @@ export default async function BlogPostPage({
           className="rounded-md object-cover"
         />
       </div>
-      <span className="bg-black px-1 py-0.5 text-base text-white">
-        {article.category}
-      </span>
-      <h3 className="pb-8 text-left text-2xl font-bold">{article.title}</h3>
-
       <div
-        className="prose prose-lg dark:prose-invert max-w-none"
+        className="blog_title section_title sentence prose prose-lg dark:prose-invert max-w-none"
         dangerouslySetInnerHTML={{ __html: article.content }}
       />
       <div className="mt-20">
