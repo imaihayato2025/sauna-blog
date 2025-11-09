@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       <Hero></Hero>
-      <SectionTitle />
+      <SectionTitle title="サウナブログ" />
       <ArticleList />
     </>
   );
