@@ -32,11 +32,13 @@ export default async function BlogPostPage({
   const { id } = await params;
   const article = await getBlogPost(id);
   return (
-    <div className="mx-auto mt-10 mb-20 w-[90%] max-w-5xl md:w-2/3">
+    <div className="mx-auto mt-2 mb-10 w-[100%] max-w-5xl sm:mt-10 sm:mb-20 md:w-2/3">
       <span className="bg-black px-1 py-0.5 text-base text-white">
         {article.category}
       </span>
-      <h3 className="pb-4 text-left text-2xl font-bold">{article.title}</h3>
+      <h3 className="text-[clamp(0.75rem, 0.667rem + 0.42vw, 1rem)] pb-4 text-left font-bold">
+        {article.title}
+      </h3>
 
       <div className="relative mb-4 aspect-[16/9] w-full">
         <Image
@@ -50,7 +52,7 @@ export default async function BlogPostPage({
         className="blog_title section_title sentence prose prose-lg dark:prose-invert max-w-none"
         dangerouslySetInnerHTML={{ __html: article.content }}
       />
-      <div className="mt-20">
+      <div className="mt-2">
         <ArticleNavigation />
       </div>
     </div>
