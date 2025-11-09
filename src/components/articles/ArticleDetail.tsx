@@ -36,11 +36,9 @@ export default function ArticleDetail({
             <span className="bg-black px-1 text-[10px] text-white">
               {category}
             </span>
-            <span className="text-[10px]">{date}</span>
+            <span className="text-[14px]">{date}</span>
           </div>
-          <h3 className="text-[clamp(0.75rem, 0.667rem + 0.42vw, 1rem)] font-bold">
-            {title}
-          </h3>
+          <h3 className="text-base font-bold">{title}</h3>
         </div>
       </div>
     </Link>
