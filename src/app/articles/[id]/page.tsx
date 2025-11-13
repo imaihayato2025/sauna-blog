@@ -51,7 +51,7 @@ export default async function BlogPostPage({
         dangerouslySetInnerHTML={{ __html: article.content }}
       />
       <div className="mt-2">
-        <ArticleNavigation />
+        <ArticleNavigation currentId={id} />
       </div>
     </div>
   );
