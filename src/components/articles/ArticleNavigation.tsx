@@ -29,8 +29,8 @@ export default async function ArticleNavigation({
       {prev ? (
         <Link href={`/articles/${prev.id}`}>
           <div className="flex flex-col items-center">
-            <HiArrowNarrowLeft size={60} color="black" className="pb-2" />
-            <p>前の記事へ</p>
+            <HiArrowNarrowLeft className="black pb-1 text-4xl sm:pb-2 sm:text-6xl" />
+            <p className="text-[10px] sm:text-[12px]">前の記事へ</p>
           </div>
         </Link>
       ) : (
@@ -40,8 +40,8 @@ export default async function ArticleNavigation({
       {next ? (
         <Link href={`/articles/${next.id}`}>
           <div className="flex flex-col items-center">
-            <HiArrowNarrowRight size={60} color="black" className="pb-2" />
-            <p>次の記事へ</p>
+            <HiArrowNarrowRight className="black pb-1 text-4xl sm:pb-2 sm:text-6xl" />
+            <p className="text-[10px] sm:text-[12px]">次の記事へ</p>
           </div>
         </Link>
       ) : (
