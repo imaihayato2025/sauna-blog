@@ -35,18 +35,29 @@ export default async function AllPostsPage({ searchParams }: any) {
   return (
     <>
       <CategoryList />
-      <div className="flex w-full flex-col justify-between gap-y-4 sm:flex-row sm:flex-wrap sm:gap-y-8">
-        {articles.map((article) => (
-          <ArticleDetail
-            key={article.id}
-            id={article.id}
-            category={article.category}
-            title={article.title}
-            eyecatch={article.eyecatch?.url || "/noimage.png"}
-            date={new Date(article.date).toLocaleDateString("ja-JP")}
-          />
-        ))}
-      </div>
+      {articles.length === 0 ? (
+        <div className="w-full py-10 text-center">
+          <p className="text-xl font-semibold text-gray-600">
+            まだ記事がありません。
+          </p>
+          <p className="mt-2 text-sm text-gray-500">
+            他のカテゴリを選択するか、記事の追加をお待ちください。
+          </p>
+        </div>
+      ) : (
+        <div className="flex w-full flex-col justify-between gap-y-4 sm:flex-row sm:flex-wrap sm:gap-y-8">
+          {articles.map((article) => (
+            <ArticleDetail
+              key={article.id}
+              id={article.id}
+              category={article.category}
+              title={article.title}
+              eyecatch={article.eyecatch?.url || "/noimage.png"}
+              date={new Date(article.date).toLocaleDateString("ja-JP")}
+            />
+          ))}
+        </div>
+      )}
     </>
   );
 }
