@@ -11,8 +11,22 @@ type PostsProps = {
   };
   date: string;
 };
+
+type MicroCmsQueries = {
+  fields?: string;
+  limit?: number;
+  filters?: string;
+};
+
+type MicroCmsResponse = {
+  contents: PostsProps[];
+  totalCount: number;
+  offset: number;
+  limit: number;
+};
+
 async function getBlogPosts(category: string): Promise<PostsProps[]> {
-  const queries: any = {
+  const queries: MicroCmsQueries = {
     fields: "id,category,title,eyecatch,date",
     limit: 100,
   };
@@ -21,7 +35,7 @@ async function getBlogPosts(category: string): Promise<PostsProps[]> {
     queries.filters = `category[contains]${category}`;
   }
 
-  const data = await client.get({
+  const data = await client.get<MicroCmsResponse>({
     endpoint: "saunablog",
     queries,
   });
@@ -29,8 +43,18 @@ async function getBlogPosts(category: string): Promise<PostsProps[]> {
   return data.contents;
 }
 
-export default async function AllPostsPage({ searchParams }: any) {
-  const category = searchParams.category || "";
+type AllPostsPageProps = {
+  searchParams: Promise<{
+    category?: string;
+  }>;
+};
+
+export default async function AllPostsPage({
+  searchParams,
+}: AllPostsPageProps) {
+  const params = await searchParams;
+  const category = params.category || "";
+
   const articles = await getBlogPosts(category);
   return (
     <>
