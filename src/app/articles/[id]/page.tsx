@@ -1,4 +1,5 @@
 import ArticleNavigation from "@/components/articles/ArticleNavigation";
+import Button from "@/components/ui/Button";
 import { client } from "@/libs/microcms";
 import Image from "next/image";
 
@@ -52,6 +53,9 @@ export default async function BlogPostPage({
       />
       <div className="mt-2">
         <ArticleNavigation currentId={id} />
+      </div>
+      <div className="flex justify-center">
+        <Button label="記事一覧へ" />
       </div>
     </div>
   );
