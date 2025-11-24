@@ -11,20 +11,27 @@ type PostsProps = {
   };
   date: string;
 };
-async function getBlogPosts(): Promise<PostsProps[]> {
+async function getBlogPosts(category: string): Promise<PostsProps[]> {
+  const queries: any = {
+    fields: "id,category,title,eyecatch,date",
+    limit: 100,
+  };
+
+  if (category) {
+    queries.filters = `category[contains]${category}`;
+  }
+
   const data = await client.get({
     endpoint: "saunablog",
-    queries: {
-      fields: "id,category,title,eyecatch,date",
-      limit: 100,
-    },
+    queries,
   });
+
   return data.contents;
 }
 
-export default async function AllPostsPage() {
-  const articles = await getBlogPosts();
-
+export default async function AllPostsPage({ searchParams }: any) {
+  const category = searchParams.category || "";
+  const articles = await getBlogPosts(category);
   return (
     <>
       <CategoryList />
