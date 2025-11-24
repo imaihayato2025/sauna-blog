@@ -9,12 +9,14 @@ type LayoutProps = {
 
 export default function MainLayout({ children }: LayoutProps) {
   return (
-    <>
+    <div className="flex min-h-screen flex-col">
       <Header />
-      <Container>
-        <main>{children}</main>
-      </Container>
+      <div className="flex-grow">
+        <Container>
+          <main>{children}</main>
+        </Container>
+      </div>
       <Footer />
-    </>
+    </div>
   );
 }

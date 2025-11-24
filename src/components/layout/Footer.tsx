@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="flex h-30 w-full flex-col items-center justify-center">
         <Logo className="text-white" />
       </div>
-      <small className="text-white">© SeekNext Co. Ltd. 2021</small>
+      <small className="text-white">© SaunaLife 2025</small>
     </footer>
   );
 }
