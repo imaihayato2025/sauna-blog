@@ -1,5 +1,6 @@
 import ArticleNavigation from "@/components/articles/ArticleNavigation";
 import Button from "@/components/ui/Button";
+import ReturnButton from "@/components/ui/ReturnButton";
 import { client } from "@/libs/microcms";
 import Image from "next/image";
 
@@ -34,6 +35,7 @@ export default async function BlogPostPage({
   const article = await getBlogPost(id);
   return (
     <div className="mx-auto mt-2 mb-10 w-[100%] max-w-5xl sm:mt-10 sm:mb-20 md:w-2/3">
+      <ReturnButton />
       <span className="bg-black px-1 py-0.5 text-[14px] text-white">
         {article.category}
       </span>
