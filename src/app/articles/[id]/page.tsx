@@ -34,12 +34,12 @@ export default async function BlogPostPage({
   const { id } = await params;
   const article = await getBlogPost(id);
   return (
-    <div className="mx-auto mt-2 mb-10 w-[100%] max-w-5xl sm:mt-10 sm:mb-20 md:w-2/3">
+    <article className="mx-auto mt-2 mb-10 w-[100%] max-w-5xl sm:mt-10 sm:mb-20 md:w-2/3">
       <ReturnButton />
       <span className="bg-black px-1 py-0.5 text-[14px] text-white">
         {article.category}
       </span>
-      <h3 className="pb-4 text-left text-base font-bold">{article.title}</h3>
+      <h1 className="pb-4 text-left text-base font-bold">{article.title}</h1>
 
       <div className="relative mb-4 aspect-[16/9] w-full">
         <Image
@@ -59,6 +59,6 @@ export default async function BlogPostPage({
       <div className="flex justify-center">
         <Button label="記事一覧へ" />
       </div>
-    </div>
+    </article>
   );
 }
