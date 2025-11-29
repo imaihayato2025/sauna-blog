@@ -34,10 +34,10 @@
 ### ページ／画面
 
 - ヘッダー（ロゴ・メニュー）
-- メインビジュアル（キャッチコピー or 最新レポート）
+- メインビジュアル
 - 最新記事一覧（カード表示）
 - 都道府県検索などの機能
-- フッター（著作権・SNS リンク）
+- フッター
 
 ---
 
@@ -58,12 +58,13 @@
 ```bash
 src/
 ├─ app/
-│  ├─ page.tsx                     
-│  ├─ articles/
-│  │  ├─ page.tsx                  
-│  │  └─ [id]/page.tsx            
+│  ├─ page.tsx                 
+│  ├─ layout.tsx               
+│  └─ articles/
+│     ├─ page.tsx              
+│     └─ [id]/
+│        └─ page.tsx           
 │
-src/
 ├─ components/
 │  ├─ layout/
 │  │  ├─ Header.tsx
@@ -71,36 +72,32 @@ src/
 │  │  ├─ Nav.tsx
 │  │  ├─ Footer.tsx
 │  │  ├─ MainLayout.tsx
-│  │  └─ Container.tsx   
+│  │  └─ Container.tsx
 │  │
-│  ├─ ui/                          
+│  ├─ ui/
 │  │  ├─ Button.tsx
-│  │  ├─ Tag.tsx
-│  │  ├─ Card.tsx
+│  │  ├─ ReturnButton.tsx
+│  │  ├─ Category.tsx
+│  │  ├─ CategoryList.tsx
 │  │  └─ SectionTitle.tsx
 │  │
-│  ├─ home/                        
-│  │  ├─ Hero.tsx                  
-│  │  ├─ LatestArticles.tsx        
-│  │  ├─ PrefectureFilter.tsx      
-│  │  └─ PickupSauna.tsx           
+│  ├─ home/
+│  │  └─ Hero.tsx
 │  │
-│  └─ articles/                   
-│     ├─ ArticleList.tsx           
-│     ├─ ArticleDetail.tsx         
-│     └─ RelatedArticles.tsx       
+│  └─ articles/
+│     ├─ ArticleList.tsx
+│     ├─ ArticleDetail.tsx
+│     └─ ArticleNavigation.tsx
 │
-└─ lib/
-   └─ microcms.ts                   # API呼び出し・データ取得処理
+└─ libs/
+   └─ microcms.ts              
 ```
 
 ## 🏷 ブランチ命名規則（最低限）
 
 - **master**：本番ブランチ
 - **develop**：開発統合ブランチ
-- **feature/**：新機能追加（例：`feature/add-latest-articles`）
-- **fix/**：バグ修正（例：`fix/footer-layout`）
-- **hotfix/**：本番緊急修正（例：`hotfix/api-fetch-error`）
+- **feature/**：新機能追加
 
 **ルール**
 
