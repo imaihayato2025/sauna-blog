@@ -53,8 +53,6 @@
 
 ## 📁 ディレクトリ構成
 
-参考: [Zenn 記事（yamu_official）](https://zenn.dev/yamu_official/articles/70f59488e8415d)
-
 ```bash
 src/
 ├─ app/
