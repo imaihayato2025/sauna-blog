@@ -28,7 +28,7 @@ export const metadata = {
     siteName: "SaunaLife",
     images: [
       {
-        url: "/ogp.png",
+        url: "/logo.png",
         width: 1200,
         height: 630,
       },
@@ -38,7 +38,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "SaunaLife｜サウナ体験ブログ",
     description: "サウナの体験や感想を発信するブログサイト SaunaLife",
-    images: ["/ogp.png"],
+    images: ["/logo.png"],
   },
   verification: {
     google: "ti7mssPi4rX4EGAMcoQM8uhMRKK4EQfxfk_tkFYeyw0",
